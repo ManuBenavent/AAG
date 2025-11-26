@@ -1,0 +1,13 @@
+pandas
+matplotlib
+numpy
+opencv-python
+Pillow
+joblib
+ipdb
+dotmap
+wandb
+openai
+torch==2.3.0+cu121
+transformers==4.46.2
+bitsandbytes

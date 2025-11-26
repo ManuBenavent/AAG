@@ -1,0 +1,33 @@
+NA
+align leg screw with table thread
+align side panel holes with front panel dowels
+attach drawer back panel
+attach drawer side panel
+attach shelf to table
+flip shelf
+flip table
+flip table top
+insert drawer pin
+lay down back panel
+lay down bottom panel
+lay down front panel
+lay down leg
+lay down shelf
+lay down side panel
+lay down table top
+other
+pick up back panel
+pick up bottom panel
+pick up front panel
+pick up leg
+pick up pin
+pick up shelf
+pick up side panel
+pick up table top
+position the drawer right side up
+push table
+push table top
+rotate table
+slide bottom of drawer
+spin leg
+tighten leg

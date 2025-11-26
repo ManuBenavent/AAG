@@ -1,0 +1,53 @@
+name: "Default-IkeaASM"
+seed: 1024
+test: # Path to weights to evaluate
+save_inference: False # Whether to save inference results for further analysis
+data:
+  dataset: "IkeaASM" # IkeaASM, meccano, Assembly101
+  action_recognition: False # Whether to perform action recognition instead of action anticipation
+  num_classes: 33 # 33 for IkeaASM, 61 for Meccano, 1064 for Assembly101
+  path: "/dataset/"
+  anno_path: "/workspace/anno/processed/"
+  RGB_features: DINOv2 # DINOv2 or CLIP-ViT-L14-336
+  depth_features: DINOv2 # DINOv2 or CLIP-ViT-L14-336
+  depth_source: "da" # gt or da (Depth Anything V2)
+  pose_source: # Not used
+  past_actions: anno/IkeaASM/ikea_classes_emb.pkl # Path to actions embeddings file. Set to null if not used. Example provided for IkeaASM with ground-truth past actions and DistilBERT embeddings.
+  n_past_actions: 7 # Number of past actions to consider
+  t_ant: 1 # Anticipation time in seconds 
+  input_frames: 1 # Number of input frames (usually 1 for AAG, N for video-based methods)
+  batch_size: 32
+  workers: 8
+model:
+  video: False # Whether to use video features (set to False for AAG)
+  video_pretrained: False # Whether the video feature extractor is pretrained (pre-extracted features)
+  weighted_loss: False # Whether to use weighted cross-entropy loss
+  verb_noun_supervision: False # Whether to use verb-noun supervision (only for Assembly101)
+  ar_supervised: False # Whether to use supervised past action embeddings
+  fusion: self-attention # concat sum self-attention
+  embedding_dim: 768
+  num_heads: 4
+  num_layers: 2
+  visual:
+    fusion: cross-attention # concat sum soft-attention self-attention cross-attention
+    num_heads: 4
+    num_layers: 2
+  text:
+    fusion: concat
+    num_heads: #4
+    num_layers: #2
+    positional_encoding: #"learned"
+solver:
+  epochs: 300
+  eval_freq: 1
+  optimizer: adamw
+  weight_decay: 0.01
+  lr: 0.00005 
+  lr_scheduler: # Not used
+  warmup_steps: # Not used
+  early_stop_patience: 10 # early_stop_patience * eval_freq = number of epochs without improvement before stopping
+  early_stop_delta: 0.001
+  primary_metric: "top1" # top1 for IkeaASM and Meccano, mean_top_k_recall for Assembly101
+logging:
+  freq: 10
+  
