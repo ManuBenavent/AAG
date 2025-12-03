@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-    <a href="https://arxiv.org/abs/"><img alt="arXiv" src="https://img.shields.io/badge/arXiv-2504.01019-b31b1b.svg"></a> 
+    <a href="https://arxiv.org/abs/2512.02846"><img alt="arXiv" src="https://img.shields.io/badge/arXiv-2504.01019-b31b1b.svg"></a> 
   </p>
   
 <br>
@@ -38,5 +38,10 @@ Anticipating actions before they occur is a core challenge in action understandi
 ## 📄 Citation
 If you find this work useful in your research, please consider citing:
 ```bibtex
-ToDo
+@article{benaventlledo2025anticipation,
+  title={Action Anticipation at a Glimpse: To What Extent Can Multimodal Cues Replace Video?},
+  author={Manuel Benavent-Lledo and Konstantinos Bacharidis and Victoria Manousaki and Konstantinos Papoutsakis and Antonis Argyros and Jose Garcia-Rodriguez}
+  journal={arXiv preprint arXiv:2512.02846},
+  year={2025}
+}
 ```
